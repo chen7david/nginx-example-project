@@ -1,5 +1,19 @@
 # nginx-example-project
 
+
+```yaml
+version: '3.2'
+
+services:
+    reverse-proxy:
+        image: nginx:latest
+        container_name: reverse-proxy
+        volumes: 
+            - ./conf.d:/etc/nginx/conf.d
+        ports: 
+            - 80:80
+```
+
 ### conf.d
 
 ```conf
