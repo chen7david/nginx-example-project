@@ -57,7 +57,8 @@ server {
 ├── conf.d
 |  └── default.conf
 ├── docker-compose.yaml
-└── pu
+└── puplic
+```
 
 ```conf
 server {
