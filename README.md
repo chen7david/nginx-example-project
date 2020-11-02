@@ -14,9 +14,6 @@ services:
             - 80:80
 ```
 
-
-```
-
 ### Proxy Server conf.d
 
 ```cmd
@@ -24,6 +21,9 @@ services:
 |  └── default.conf
 ├── docker-compose.yaml
 └── public
+
+```
+
 
 ```conf
 server {
