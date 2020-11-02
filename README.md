@@ -14,7 +14,16 @@ services:
             - 80:80
 ```
 
-### conf.d
+
+```
+
+### Proxy Server conf.d
+
+```cmd
+├── conf.d
+|  └── default.conf
+├── docker-compose.yaml
+└── public
 
 ```conf
 server {
@@ -40,6 +49,35 @@ server {
 
     location / {
         proxy_pass "http://192.168.50.251:9000";
+    }
+}
+```
+
+### File Server conf.d
+
+```conf
+server {
+    listen       80;
+    listen  [::]:80;
+    server_name  localhost;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+
+        if ($request_method = OPTIONS) {
+            return 204;
+        }
+
+        add_header Access-Control-Allow-Origin *;
+        add_header Access-Control-Max-Age 3600;
+        add_header Access-Control-Expose-Headers Content-Length;
+        add_header Access-Control-Allow-Headers Range;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
     }
 }
 ```
