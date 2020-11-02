@@ -19,8 +19,7 @@ services:
 ```cmd
 ├── conf.d
 |  └── default.conf
-├── docker-compose.yaml
-└── public
+└── docker-compose.yaml
 ```
 
 
@@ -53,6 +52,12 @@ server {
 ```
 
 ### File Server conf.d
+
+```cmd
+├── conf.d
+|  └── default.conf
+├── docker-compose.yaml
+└── pu
 
 ```conf
 server {
